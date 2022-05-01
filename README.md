@@ -1,4 +1,4 @@
-## Did You?
+# Did You?
 
 Did You is a To-do list web application in which you can create several different boards with individually assigned tasks.
 
@@ -18,13 +18,16 @@ On the homepage you will start out with an empty board list. On the left of the 
 To see a simplified diagram of the website architecture see [websitearchitecture.png](websitearchitecture.png).
 
 ### Frontend
-The frontend consists of HTML, CSS and JavaScript files. In the app/templates directory you can find the three HTML pages login, main and register. In the app/static/css directory are the three CSS files affiliated to the HTML pages that share the same name. The app/static/js directory consists of one JavaScript file named script. It is only linked to the main.html page and responsible for the entire board and task functions. The JavaScript file uses forms and unique ID's for the boards and tasks to differentiate them from each other and pull them from your local browser storage. This way your boards and tasks remain after you close the page or even your browser. 
+The frontend consists of HTML, CSS and JavaScript files. In the app/templates directory you can find the three HTML pages login, main and register. In the app/static/css directory are the three CSS files affiliated to the HTML pages that share the same name. The app/static/js directory consists of one JavaScript file name script. It is only linked to the main.html page and responsible for the entire board and task functions. The JavaScript file uses forms and unique ID's for the boards and tasks to differentiate them from each other and pull them from your local browser storage. This way your boards and tasks remain after you close the page or even your browser. 
 
 ### Backend
-The backend was written using Python 3 and the related python package Flask. For this project Blueprints were used to simplify the size of the application by creating instances and organizing the app into modules. The three used modules are app, main and user. App contains and handles the database as well as affiliated configurations in addition to the login manager. It also contains the for the frontend responsible folders static and templates and the two other modules. Main handles the routing to the main page of the application. Users handles everything user related. It holds the forms for the login and the registration of users as well as the routing to these corresponding pages. It also handles users logging out of the application.
+The backend was written using Python 3 and the related python package Flask. For this project Blueprints were used to simplify the size of the application and increase its testability by creating instances and organizing the app into modules. The three used modules are app, main and user. App contains and handles the database as well as affiliated configurations in addition to the login manager. It also contains the for the frontend responsible folders static and templates and the two other modules. Main handles the routing to the main page of the application. Users handles everything user related. It holds the forms for the login and the registration of users as well as the routing to these corresponding pages. It also handles users logging out of the application.
 
 ## Deployment
 Git and Heroku are responsible for the web deployment. Git is the communicator that pushes the code and information onto Heroku, the server host. With the help of the Procfile Heroku knows to run the run.py file, with gunicorn as its dyno, in order to start the application. 
 
 ## Requirements
 To see the essential packages and requirements see [requirements.txt](requirements.txt).
+
+## Security Measures
+To avoid security leaks on user information every password in the database is hashed through bcrypt. In addition the User model in the database does not return the password in any way through the represent function
