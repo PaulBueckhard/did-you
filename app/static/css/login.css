@@ -1,0 +1,78 @@
+:root {
+    --clr-primary: #C8C6C6;
+    --clr-light: #F7F6F2;
+    --clr-dark: #333;
+    --clr-red: rgb(145, 0, 0);
+}
+
+*,
+*::before,
+*::after {
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
+    background-color: var(--clr-primary);
+    color: var(--clr-dark);
+    text-align: center;
+}
+
+.title {
+    font-family: "Lucida Handwriting";
+    text-align: center;
+    font-size: 370%;
+    margin: -0.1em 0 0.5em;
+    border-bottom: 3px solid #333;
+    background-color: var(--clr-light);
+}
+
+.login-box {
+    text-align: center;
+    background-color: var(--clr-light);
+    border: 3px solid #333;
+    padding: 0 0 0.7em 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5em;
+    width: 30%;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+
+.invalid-feedback {
+    color: var(--clr-red);
+    font-size: 1rem;
+}
+
+@media only screen and (max-width: 1300px) {
+    .login-box {
+        width: 40%;
+    }
+  }
+
+@media only screen and (max-width: 1000px) {
+    .login-box {
+        width: 50%;
+    }
+  }
+
+@media only screen and (max-width: 800px) {
+    .login-box {
+        width: 60%;
+    }
+  }
+
+@media only screen and (max-width: 600px) {
+    .login-box {
+        width: 80%;
+    }
+
+    .title {
+        font-size: 300%;
+    }
+  }
